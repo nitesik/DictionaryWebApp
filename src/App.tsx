@@ -4,7 +4,7 @@ import Home from './Components/Home';
 
 function App() {
 
-  const [dark, setDark] = useState<any>(null);
+  const [dark, setDark] = useState<boolean>(false);
   
   return (
     <div className={`App ${dark ? "dark" : "light"}`}>
