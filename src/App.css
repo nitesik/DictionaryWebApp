@@ -1,38 +1,88 @@
+.light {
+  --clr-background-color: #fff;
+  --clr-text-color: black;
+  --clr-box-shadow:rgba(0, 0, 0, .1);
+  --clr-dropdown-color: #fff;
+  --clr-input-color: #F4F4F4;
+}
+
+.dark {
+  --clr-background-color: #050505;
+  --clr-text-color: white;
+  --clr-box-shadow:#A445ED;
+  --clr-dropdown-color: #1f1f1f;
+  --clr-input-color: #1f1f1f;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: var(--clr-background-color);
+  color: var(--clr-text-color);
+  min-height: 100vh;
+  transition: all 300ms ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+.main li span {
+  color: var(--clr-text-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+nav .dropdown > div {
+  margin-left: 24px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+nav .dropdown > div:hover {
+  color: #A445ED;
+  cursor: pointer;
+}
+
+form {
+  background-color: var(--clr-input-color) !important;
+  border: 1px solid transparent;
+}
+
+form:hover {
+  border: 1px solid #A445ED;
+}
+
+@media (min-width: 700px) {
+  nav .dropdown {
+    position: absolute;
+    height: 152px;
+    width: 183px;
+    background-color: var(--clr-dropdown-color);
+    box-shadow: 0 5px 30px var(--clr-box-shadow);
+    top: 105px;
+    border-right: 0px !important;
+    margin-left: -150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    align-items: start !important;
+    border-radius: 16px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 699px) {
+  nav .dropdown {
+    position: absolute;
+    height: 152px;
+    width: 183px;
+    background-color: var(--clr-dropdown-color);
+    box-shadow: 0 5px 30px var(--clr-box-shadow);
+    top: 125px;
+    border-right: 0px !important;
+    margin-left: -100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    align-items: start !important;
+    border-radius: 16px;
   }
 }
