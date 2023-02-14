@@ -74,7 +74,7 @@ function Body({jsonData} : any) {
       </div>
       <div className="sources">
         <div className="text">Source</div>
-        <a href={jsonData[0].sourceUrls[0]} target="_blank">{jsonData[0].sourceUrls[0]}</a>
+        <a href={jsonData[0].sourceUrls[0]} target="_blank">{Wikipedia}</a>
       </div>
     </div>
   )
