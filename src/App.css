@@ -75,9 +75,9 @@ form:hover {
     width: 183px;
     background-color: var(--clr-dropdown-color);
     box-shadow: 0 5px 30px var(--clr-box-shadow);
-    top: 125px;
+    top: 75px;
     border-right: 0px !important;
-    margin-left: -100px;
+    margin-left: -75px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
