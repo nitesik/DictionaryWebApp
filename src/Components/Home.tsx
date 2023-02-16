@@ -43,7 +43,7 @@ function Body({jsonData} : any) {
     <div className="content">
       <div className="header">
           <div>
-            <div className="title">{jsonData[0].word}</div>
+            <div className="title">{(jsonData[0].word).length <= 12 ? jsonData[0].word : (jsonData[0].word).slice(0, 10) + "..."}</div>
             <div className="pronunciation">{jsonData[0].phonetic}</div>
           </div>
           { audioNotFound || <img src={play} alt="" onClick={() => (audio?.play())} />}
@@ -65,7 +65,7 @@ function Body({jsonData} : any) {
                   ))}
                   {meaning.synonyms.length !== 0 && <div className="synonyms">
                   <div className="subtitle">Synonyms</div>
-                  <div className="alt-text">{(meaning.synonyms).map((words : any) => words + " ")}</div>
+                  <div className="alt-text">{(meaning.synonyms).map((words : any) => `"${words}"` + " ")}</div>
                 </div>}
                 
               </div>
@@ -112,8 +112,6 @@ function Home({dark, setDark} : any) {
     setJsonData(data);
     setPageFound(response.ok);
     setSearched(true);
-    console.log(data);
-    
   }
   
   return (
