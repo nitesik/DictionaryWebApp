@@ -9,6 +9,8 @@ import { SyntheticEvent, useEffect, useState } from "react";
 import { Switch } from "@mui/material";
 import { styled } from "@mui/system";
 
+import clickSound from "./Sounds/click.mp3";
+
 const CustomToggle = styled(Switch)({
   padding: "5px",
   '& .Mui-checked + .MuiSwitch-track': {
@@ -128,7 +130,7 @@ function Home({dark, setDark} : any) {
             <div className="serif" onClick={() => {setFount("serif"); setDropdown(false)}}>serif</div>
             <div className="mono" onClick={() => {setFount("mono"); setDropdown(false)}}>mono</div>
           </div>}
-          <CustomToggle onChange={(e) => setDark(e.target.checked)} />
+          <CustomToggle onChange={(e) => setDark(e.target.checked)} onClick={() => new Audio(clickSound).play()} />
           <img src={dark ? moon_dark : moon} alt="" />
         </div>
       </nav>
