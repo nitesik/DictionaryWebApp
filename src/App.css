@@ -65,6 +65,9 @@ form:hover {
     padding: 24px;
     align-items: start !important;
     border-radius: 16px;
+    animation: menu 200ms linear;
+    transform-origin: top;
+    user-select: none;
   }
 }
 
@@ -84,5 +87,17 @@ form:hover {
     padding: 24px;
     align-items: start !important;
     border-radius: 16px;
+    animation: menu 100ms linear;
+    transform-origin: top;
+  }
+}
+
+@keyframes menu {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
   }
 }
